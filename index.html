@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <!-- Meta Tags -->
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>SBSJ Property Hub | Towards a Dream Home</title>
+  
+  <!-- Security Headers -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+  <meta http-equiv="X-Frame-Options" content="DENY"/>
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block"/>
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()"/>
+  
+  <!-- Content Security Policy -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'"/>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Stylesheets -->
+  <link href="style.css" rel="stylesheet"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#1B2951",
+            secondary: "#C9A96E",
+            accent: "#DAA520",
+            "neutral-gray": "#f5f5f5",
+            "dark-gray": "#1a1a1a",
+            "navy": "#1B2951",
+            "gold": "#C9A96E",
+            "dark-gold": "#B8860B",
+          },
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0",
+            'xl': '0',
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-white dark:bg-black text-black dark:text-white font-sans transition-colors duration-300">
+
+  <!-- ============ HEADER ============ -->
+  <header class="pt-12 sm:pt-16 md:pt-20 pb-10 sm:pb-12 md:pb-16 flex flex-col items-center justify-center px-4">
+    <div class="flex flex-col items-center text-center">
+      <!-- Logo -->
+      <div class="mb-3 sm:mb-4">
+        <svg class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 text-black dark:text-white" fill="none" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 15L15 45H25V80H75V45H85L50 15Z" fill="currentColor"></path>
+          <circle class="dark:fill-black" cx="50" cy="55" fill="white" r="8"></circle>
+          <path class="dark:fill-black" d="M40 80V68C40 65 42 63 45 63H55C58 63 60 65 60 68V80" fill="white"></path>
+          <path d="M20 85C35 78 65 78 80 85" stroke="currentColor" stroke-linecap="round" stroke-width="4"></path>
+        </svg>
+      </div>
+      
+      <!-- Title & Tagline -->
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter leading-none mb-2">SBSJ</h1>
+      <p class="text-sm sm:text-base md:text-lg font-light tracking-[0.1em] uppercase opacity-80">Towards a dream home</p>
+    </div>
+  </header>
+
+  <!-- ============ MAIN CONTENT ============ -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24 md:pb-32">
+    <!-- Image Slider Section -->
+    <section class="relative h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[75vh] mb-16 sm:mb-20 md:mb-24 border border-black/5 slider-container">
+      <!-- Slides -->
+      <div class="slider-wrapper" id="sliderWrapper">
+        <div class="slide">
+          <img alt="Property 1" class="grayscale hover:grayscale-0 transition-all duration-1000" src="foto/properti1.png"/>
+        </div>
+        <div class="slide">
+          <img alt="Property 2" class="grayscale hover:grayscale-0 transition-all duration-1000" src="foto/properti2.jpeg"/>
+        </div>
+        <div class="slide">
+          <img alt="Property 3" class="grayscale hover:grayscale-0 transition-all duration-1000" src="foto/properti3.jpeg"/>
+        </div>
+        <div class="slide">
+          <img alt="Property 4" class="grayscale hover:grayscale-0 transition-all duration-1000" src="foto/properti4.jpeg"/>
+        </div>
+        <div class="slide">
+          <img alt="Property 5" class="grayscale hover:grayscale-0 transition-all duration-1000" src="foto/properti5.jpeg"/>
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <button class="slider-nav prev" onclick="moveSlide(-1)" aria-label="Previous slide">
+        <span class="material-symbols-outlined">chevron_left</span>
+      </button>
+      <button class="slider-nav next" onclick="moveSlide(1)" aria-label="Next slide">
+        <span class="material-symbols-outlined">chevron_right</span>
+      </button>
+
+      <!-- Dots Indicator -->
+      <div class="slider-dots" id="sliderDots"></div>
+
+      <!-- Hero Overlay -->
+      <div class="absolute inset-0 hero-overlay flex flex-col items-center justify-end pb-12 sm:pb-16 md:pb-20 px-4 text-center pointer-events-none">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-3 sm:mb-4 md:mb-6 tracking-tight">Temukan Rumah Impian Anda</h2>
+        <p class="text-white/90 max-w-2xl text-sm sm:text-base md:text-lg lg:text-xl font-light leading-relaxed px-2">Connect with the premier destination for custom-built luxury homes and exclusive land acquisitions.</p>
+      </div>
+    </section>
+
+    <!-- Social Media Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 border-t border-l border-navy dark:border-white">
+      <!-- Instagram -->
+      <a class="grid-tile border-r border-b border-navy dark:border-white group" href="https://www.instagram.com/bumisarijaya.official?igsh=dzgyaXhvZXZqZXln" target="_blank" rel="noopener noreferrer nofollow">
+        <div class="mb-4 sm:mb-6 transition-transform duration-500 group-hover:scale-110">
+          <svg class="w-10 h-10 sm:w-12 sm:h-12" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+          </svg>
+        </div>
+        <span class="font-bold text-xs sm:text-sm uppercase tracking-widest">Instagram</span>
+        <p class="text-[10px] sm:text-xs mt-2 sm:mt-3 opacity-60">@sbsj_property</p>
+      </a>
+
+      <!-- WhatsApp -->
+<a class="grid-tile border-r border-b border-navy dark:border-white group"
+   href="https://wa.me/6282326938817"
+   target="_blank"
+   rel="noopener noreferrer nofollow">
+
+  <div class="mb-4 sm:mb-6 transition-transform duration-500 group-hover:scale-110">
+    <svg class="w-10 h-10 sm:w-12 sm:h-12"
+         fill="currentColor"
+         viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.16 5.335 5.496 0 12.05 0c3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448L.057 24z"/>
+    </svg>
+  </div>
+
+  <span class="font-bold text-xs sm:text-sm uppercase tracking-widest">
+    WhatsApp
+  </span>
+  <p class="text-[10px] sm:text-xs mt-2 sm:mt-3 opacity-60">
+    Consultation Hub
+  </p>
+</a>
+
+
+      <!-- TikTok -->
+      <a class="grid-tile border-r border-b border-navy dark:border-white group" href="https://www.tiktok.com/@sbsj276?_r=1&_t=ZS-93AcWyZupoy" target="_blank" rel="noopener noreferrer nofollow">
+        <div class="mb-4 sm:mb-6 transition-transform duration-500 group-hover:scale-110">
+          <svg class="w-10 h-10 sm:w-12 sm:h-12" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.81.35-.63.42-1.12 1.07-1.32 1.81-.21.78-.13 1.66.24 2.37.51.84 1.45 1.42 2.43 1.48.91.08 1.88-.19 2.61-.75.69-.52 1.11-1.34 1.17-2.2.03-3.92.02-7.83.02-11.75z"></path>
+          </svg>
+        </div>
+        <span class="font-bold text-xs sm:text-sm uppercase tracking-widest">TikTok</span>
+        <p class="text-[10px] sm:text-xs mt-2 sm:mt-3 opacity-60">Property Gallery</p>
+      </a>
+
+    
+
+      <!-- YouTube -->
+      <a class="grid-tile border-r border-b border-navy dark:border-white group" href="https://youtube.com/@sbsj-n2v?si=tEcQCmE_zcgbr7Wv" target="_blank" rel="noopener noreferrer nofollow">
+        <div class="mb-4 sm:mb-6 transition-transform duration-500 group-hover:scale-110">
+          <svg class="w-10 h-10 sm:w-12 sm:h-12" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
+          </svg>
+        </div>
+        <span class="font-bold text-xs sm:text-sm uppercase tracking-widest">YouTube</span>
+        <p class="text-[10px] sm:text-xs mt-2 sm:mt-3 opacity-60">Virtual Tours</p>
+      </a>
+
+      <!-- Email -->
+      <a class="grid-tile border-r border-b border-navy dark:border-white group" href="mailto:sbsj2026official@gmail.com?subject=Inquiry%20About%20Property&body=Hello%20SBSJ,%0AI%20am%20interested%20in%20learning%20more%20about%20your%20properties." target="_blank" rel="noopener noreferrer nofollow">
+        <div class="mb-4 sm:mb-6 transition-transform duration-500 group-hover:scale-110">
+          <span class="material-symbols-outlined text-5xl sm:text-6xl">mail</span>
+        </div>
+        <span class="font-bold text-xs sm:text-sm uppercase tracking-widest">Email</span>
+        <p class="text-[10px] sm:text-xs mt-2 sm:mt-3 opacity-60">Inquiry Department</p>
+      </a>
+    </div>
+
+    <!-- About Section -->
+    <section class="mt-24 sm:mt-32 md:mt-40">
+      <div class="flex flex-col md:flex-row items-center gap-12 sm:gap-16 md:gap-20">
+        <!-- Text Content -->
+        <div class="w-full md:w-1/2">
+          <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 tracking-tight">Build Your Vision with SBSJ</h3>
+          <p class="text-black/70 dark:text-white/70 leading-relaxed mb-8 sm:mb-10 text-base sm:text-lg font-light">Sebagai mitra properti terpercaya, SBSJ menghadirkan pilihan kavling terbaik di lokasi strategis. Kami fokus pada kualitas struktur dan nilai investasi tinggi untuk masa depan Anda.</p>
+          
+          <!-- Features List -->
+          <ul class="space-y-4 sm:space-y-6">
+            <li class="flex items-center space-x-3 sm:space-x-4">
+              <span class="material-symbols-outlined text-black dark:text-white text-xl sm:text-2xl">done_all</span>
+              <span class="font-medium tracking-wide uppercase text-xs sm:text-sm">LOKASI PREMIUM & SIAP BANGUN</span>
+            </li>
+            <li class="flex items-center space-x-3 sm:space-x-4">
+              <span class="material-symbols-outlined text-black dark:text-white text-xl sm:text-2xl">done_all</span>
+              <span class="font-medium tracking-wide uppercase text-xs sm:text-sm">AKSES JALAN LUAS & MUDAH</span>
+            </li>
+            <li class="flex items-center space-x-3 sm:space-x-4">
+              <span class="material-symbols-outlined text-black dark:text-white text-xl sm:text-2xl">done_all</span>
+              <span class="font-medium tracking-wide uppercase text-xs sm:text-sm">LINGKUNGAN ASRI & AMAN</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Image Content -->
+        <div class="w-full md:w-1/2 flex flex-col gap-6">
+          <div class="border border-gray-300 p-4 bg-gradient-to-br from-yellow-100 to-orange-100 shadow-lg">
+            <img alt="Site Plan SBSJ - Satrio Bumi Sari Jaya" class="w-full h-[300px] sm:h-[350px] md:h-[400px] object-contain rounded-sm bg-white border border-yellow-200" src="foto/site-plan.png"/>
+            <div class="mt-3 text-center">
+              <p class="text-xs font-medium text-orange-800 uppercase tracking-wider">Site Plan Development</p>
+              <p class="text-[10px] text-orange-600 mt-1">Satrio Bumi Sari Jaya - Medeo Cermen</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-black py-16 sm:py-20 md:py-24 text-white">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <!-- Footer Logo & Tagline -->
+      <div class="flex flex-col items-center mb-8 sm:mb-10 md:mb-12">
+        <svg class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-white mb-3 sm:mb-4" fill="none" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 15L15 45H25V80H75V45H85L50 15Z" fill="currentColor"></path>
+          <circle cx="50" cy="55" fill="black" r="8"></circle>
+          <path d="M40 80V68C40 65 42 63 45 63H55C58 63 60 65 60 68V80" fill="black"></path>
+          <path d="M20 85C35 78 65 78 80 85" stroke="currentColor" stroke-linecap="round" stroke-width="4"></path>
+        </svg>
+        <p class="text-2xl sm:text-3xl font-bold tracking-tighter mb-1 uppercase">SBSJ</p>
+        <p class="text-[10px] sm:text-xs font-light tracking-[0.2em] uppercase opacity-60">Towards a dream home</p>
+      </div>
+
+      <!-- Footer Description -->
+      <p class="text-xs sm:text-sm max-w-md mx-auto mb-8 sm:mb-10 md:mb-12 opacity-60 leading-relaxed font-light px-4">Menghubungkan para visioner dengan peluang real estat yang luar biasa. Perjalanan Anda menuju rumah impian dimulai di sini.</p>
+
+      <!-- Location Info -->
+      <div class="flex justify-center mb-12 sm:mb-16 md:mb-20 text-[10px] sm:text-xs font-bold uppercase tracking-widest">
+        <span class="opacity-60">Jl. Domas Beton Menganti Gresik</span>
+      </div>
+
+      <!-- Copyright -->
+      <p class="text-[9px] sm:text-[10px] uppercase tracking-[0.3em] opacity-40">© 2026 SBSJ PROPERTY. ALL RIGHTS RESERVED.</p>
+    </div>
+  </footer>
+
+  <!-- ============ DARK MODE TOGGLE ============ -->
+  <button class="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 p-3 sm:p-4 bg-navy dark:bg-white text-gold dark:text-navy rounded-none border-2 border-gold dark:border-navy shadow-2xl hover:scale-105 hover:bg-gold hover:text-navy dark:hover:bg-navy dark:hover:text-gold transition-all duration-300 z-50 flex flex-col items-center justify-center gap-1" onclick="document.documentElement.classList.toggle('dark')" aria-label="Toggle dark mode">
+    <!-- SBSJ Logo -->
+    <svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 15L15 45H25V80H75V45H85L50 15Z" fill="currentColor"></path>
+      <circle class="dark:fill-navy" cx="50" cy="55" fill="white" r="8"></circle>
+      <path class="dark:fill-navy" d="M40 80V68C40 65 42 63 45 63H55C58 63 60 65 60 68V80" fill="white"></path>
+      <path d="M20 85C35 78 65 78 80 85" stroke="currentColor" stroke-linecap="round" stroke-width="4"></path>
+    </svg>
+    <!-- Mode Icons -->
+    <div class="flex items-center">
+      <span class="material-symbols-outlined dark:hidden text-sm sm:text-base">dark_mode</span>
+      <span class="material-symbols-outlined hidden dark:block text-sm sm:text-base">light_mode</span>
+    </div>
+  </button>
+
+  <!-- Scripts -->
+  <script src="script.js" defer></script>
+  
+  <!-- Security: Disable right-click and F12 (optional) -->
+  <script>
+    // Disable right-click context menu
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+    
+    // Disable F12, Ctrl+Shift+I, Ctrl+U
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'F12' || 
+          (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+          (e.ctrlKey && e.key === 'u')) {
+        e.preventDefault();
+      }
+    });
+    
+    // Disable text selection (optional)
+    document.addEventListener('selectstart', function(e) {
+      e.preventDefault();
+    });
+  </script>
+</body>
+</html>

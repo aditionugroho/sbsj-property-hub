@@ -1,0 +1,19 @@
+# SBSJ Property - Robots.txt
+User-agent: *
+Allow: /
+Allow: /foto/
+Allow: /*.css
+Allow: /*.js
+
+# Block sensitive areas
+Disallow: /.htaccess
+Disallow: /.vscode/
+Disallow: /admin/
+Disallow: /config/
+Disallow: /logs/
+
+# Sitemap location (create this later)
+# Sitemap: https://your-domain.com/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1
